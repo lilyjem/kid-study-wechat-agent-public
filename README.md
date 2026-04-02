@@ -1,5 +1,7 @@
 # kid-study-wechat-agent-public
 
+[中文说明 / Chinese README](./README.zh-CN.md)
+
 A public, privacy-scrubbed version of a WeChat-based tutoring agent for elementary school learners.
 
 This repository focuses on three things:

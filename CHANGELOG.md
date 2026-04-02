@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - bundled `scripts/send_email.py` SMTP helper for easier standalone use
+- `README.zh-CN.md` for Chinese documentation
 
 ### Changed
 - `scripts/send_risk_alert_email.sh` now defaults to the bundled mail helper when `SMTP_SEND_SCRIPT` is not set
