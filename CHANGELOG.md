@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- bundled `scripts/send_email.py` SMTP helper for easier standalone use
+
+### Changed
+- `scripts/send_risk_alert_email.sh` now defaults to the bundled mail helper when `SMTP_SEND_SCRIPT` is not set
+- expanded environment example with SMTP variables
+
 ## [0.1.0] - 2026-04-02
 
 ### Added

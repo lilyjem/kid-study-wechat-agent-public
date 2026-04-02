@@ -3,7 +3,7 @@
 ## Parent Alert Target
 
 - Alert email recipient: 通过环境变量 `ALERT_EMAIL_TO` 提供（示例：`parent@example.com`）
-- SMTP script path: 通过环境变量 `SMTP_SEND_SCRIPT` 提供（示例：`/path/to/send_email.py`）
+- SMTP script path: 默认使用仓库自带的 `scripts/send_email.py`；也可通过环境变量 `SMTP_SEND_SCRIPT` 覆盖为你自己的实现
 - Optional subject prefix: `ALERT_SUBJECT_PREFIX`（默认：`[儿童风险提醒]`）
 - Preferred alert command: `bash scripts/send_risk_alert_email.sh`
 - Purpose: 当儿童 agent 检测到高风险或明显影响儿童身心健康的负面信息时，立即发送邮件提醒家长
@@ -14,8 +14,11 @@
 
 ```bash
 export ALERT_EMAIL_TO="parent@example.com"
-export SMTP_SEND_SCRIPT="/path/to/send_email.py"
 # 可选：export ALERT_SUBJECT_PREFIX="[儿童风险提醒]"
+
+# 默认直接使用仓库中的 scripts/send_email.py，
+# 也可以改成你自己的 helper：
+# export SMTP_SEND_SCRIPT="/absolute/path/to/send_email.py"
 
 bash scripts/send_risk_alert_email.sh \
   "<风险类型>" \
@@ -24,7 +27,8 @@ bash scripts/send_risk_alert_email.sh \
 ```
 
 脚本内部会调用：
-- `SMTP_SEND_SCRIPT` 指定的发信脚本
+- 默认的 `scripts/send_email.py`
+- 或 `SMTP_SEND_SCRIPT` 指定的发信脚本
 - `ALERT_EMAIL_TO` 指定的收件人
 
 要求：
