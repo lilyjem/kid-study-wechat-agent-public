@@ -1,0 +1,9 @@
+.openclaw/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
